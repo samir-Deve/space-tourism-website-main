@@ -857,3 +857,24 @@ border: 0;
 		margin-right: 1em;
 	}
 }
+
+/* technology */
+
+.tech-main-page {
+	background-image: url(./starter-code/assets/technology/background-technology-mobile.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media (min-width: 35em) {
+	.tech-main-page {
+		background-image: url(./starter-code/assets/technology/background-technology-tablet.jpg);
+	}
+}
+
+@media (min-width: 45em) {
+	.tech-main-page {
+		background-image: url(./starter-code/assets/technology/background-technology-desktop.jpg);
+	}
+}
