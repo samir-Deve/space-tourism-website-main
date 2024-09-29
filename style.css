@@ -377,7 +377,7 @@ border: 0;
 .main-cont {
 	display: flex;
 	flex-direction: column;
-	padding-inline: 2em;
+	margin-inline: 6em;
 	gap: 2em;
 	height: 80vh;
 	margin-top: 3em;
@@ -557,12 +557,12 @@ border: 0;
 
 .des-cont {
 	margin-top: 3em;
-	padding-inline: 1.5em;
+	margin-inline: 1.5em;
 }
 
 @media (min-width: 35em) {
 	.des-cont {
-		padding-inline: 2em;
+		margin-inline: 4em;
 	}
 
 	.numbered-headers {
@@ -576,6 +576,9 @@ border: 0;
 }
 
 @media (min-width: 45em) {
+	.des-cont {
+		margin-inline: 6em;
+	}
 	.img-info-cont {
 		display: flex;
 		gap: 2em;
@@ -583,7 +586,7 @@ border: 0;
 
 	.des-img-cont {
 		flex: 1;
-		padding-top: 2em;
+		padding-top: 5em;
 	}
 
 	.des-info-cont {
@@ -618,4 +621,239 @@ border: 0;
 	height: clamp(50%, 50% + 10vw, 100%);
 }
 
+/* ========== */
+/* Crew styles */
+/* ========== */
 
+/* background img */
+
+.crew-page {
+	background-image: url(./starter-code/assets/crew/background-crew-mobile.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media (min-width: 35em) {
+	.crew-page {
+		background-image: url(./starter-code/assets/crew/background-crew-tablet.jpg);
+	}
+}
+
+@media (min-width: 45em) {
+	.crew-page {
+		background-image: url(./starter-code/assets/crew/background-crew-desktop.jpg);
+	}
+}
+
+/* crew utility classes */
+
+.role {
+	color: hsl(var(--clr-white) / .25);
+}
+
+.crew-name {
+	font-size: clamp(1em, 1em + 2vw, 3em);
+}
+
+.dot-indicators {
+	display: flex;
+	gap: 1em;
+	justify-content: center;
+	margin-top: 2em;
+}
+
+.dot-indicators button {
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: hsl(var(--clr-white) / .25);
+	border: none;
+	cursor: pointer;
+
+}
+
+.dot-indicators .dot-on {
+	background-color: hsl( var(--clr-white) );
+}
+
+.dot-indicators button:hover {
+	background-color: hsl(var(--clr-white) / .60);
+}
+
+
+.crew-info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.crew-img-cont {
+	flex: 1;
+	position: relative;
+	display: flex;
+}
+
+.crew-img-cont img {
+	margin-inline: auto;
+	margin-block: 1em;
+	max-width: 100%;
+	margin-bottom: 2.2em;
+}
+
+
+.role-name-bio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.80em;
+}
+
+
+
+
+@media (min-width: 35em) and (max-width: 45em) {
+
+	.crew-img-cont::after{
+		box-shadow: none;
+	}
+
+	.crew-img-cont img {
+		margin-bottom: 0em;
+		width: 70%;
+	}
+}
+
+@media (min-width: 45em) {
+	.dot-indicators {
+		justify-content: start;
+	}
+
+	.crew-img-cont {
+		height: 80vh;
+	}
+
+	.crew-info {
+		justify-content: space-around;
+	}
+
+	.role-name-bio {
+		align-items: start;
+	}
+}
+
+/* =============== */
+/* technology styles*/
+/* =============== */
+
+/* tech utility classes */
+
+.numbered-dots {
+	max-width: fit-content;
+	display: flex;
+	gap: 1em;
+}
+
+.numbered-dots .numbered-dot {
+	padding-inline: 0.7em;
+	padding-top: 0.2em;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	font-size: 550;
+	background-color: transparent;
+	border: 0.050em solid hsl(var(--clr-white) / .25);
+	cursor: pointer;
+
+}
+
+.numbered-dots .numbered-dot.is-on {
+	background-color: hsl( var(--clr-white) );
+	color: hsl( var(--clr-dark) );
+}
+
+.numbered-dots .numbered-dot:hover, .numbered-dots .numbered-dot:focus {
+	border-color: hsl( var(--clr-white) );
+}
+
+.tech-main-cont {
+	margin-top: 2em;
+	display: grid;
+	grid-template-columns: 2em minmax(0, 40em) minmax(0, 20em) 2em;
+	grid-template-rows: repeat(3, auto);
+	gap: 2em;
+}
+/* .tech-main-cont >* {
+	border: 1px solid white;
+} */
+
+.tech-numbered-header {
+	margin-bottom: 2em;
+	grid-column: 2/8;
+}
+
+.tech-numbered-header span{
+	color: hsl(var(--clr-white) / .25);
+}
+
+.tech-info-cont {
+	grid-column: 1/8;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+}
+
+.tech-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	padding-inline: 1em;
+}
+
+.terminology, .tech-name, .tech-info {
+	text-align: center;
+}
+.terminology {
+	color: hsl(var(--clr-white) / .25);
+}
+
+.tech-info {
+	margin-bottom: 1em;
+}
+
+.tech-img-cont {
+	grid-column: 1/8;
+	grid-row: 2/3;
+}
+
+.tech-img-cont img{
+	width: 100%;
+}
+
+@media (min-width: 35em) {
+	.tech-info {
+		padding-inline: 2em;
+	}
+}
+
+@media (min-width: 45em) {
+	.tech-info-cont {
+		flex-direction: row;
+		grid-column: 2/5;
+	}
+
+	.tech-info {
+		padding-inline: 0em;
+	}
+	.terminology, .tech-name, .tech-info {
+		text-align: start;
+	}
+	.tech-img-cont {
+		grid-column: 5/8;
+	}
+	.numbered-dots {
+		flex-direction: column;
+		gap: 4em;
+		margin-right: 1em;
+	}
+}
